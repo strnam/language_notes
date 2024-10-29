@@ -26,4 +26,21 @@ indices = mask.nonzero()
 print("indices shape: ", indices.shape)
 print( "img_obs shape: ", img_obs.shape) # 
 print("img_obs[indices] shape: ", img_obs[indices].shape) # 
+
+
+# %% tensor[indices] creates a new tensor
+m, n = 3, 3  # for example
+tensor = torch.arange(m * n).reshape(m *n, 1)
+mask = [1, 3, 5]
+print(tensor)
+sub_tensor = tensor[mask]
+print("sub_tensor: ", sub_tensor)
+# Modify the sub_tensor
+sub_tensor[1] = 999
+print("\nModified sub_tensor:")
+print(sub_tensor)
+print("\nOriginal tensor after modifying sub_tensor:")
+print(tensor)
+
+
 # %%
